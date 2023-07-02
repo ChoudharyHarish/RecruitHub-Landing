@@ -3,13 +3,12 @@ import banner from "../images/banner.jpeg";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import Input from "../Components/Input";
-import Banner from "./banner";
 
 const Main = () => {
   return (
     <div className="home relative">
       <div className="z-20 text-white flex flex-col justify-center items-center">
-          <h1 className="sm:text-heading text-5xl  font-extrabold text-center">
+          <h1 className="sm:text-heading text-4xl xs:text-5xl font-extrabold text-center px-2 sm:px-0">
             Hire <span className="text-primary">Talent</span> Beyond <br /> your
             Borders
           </h1>

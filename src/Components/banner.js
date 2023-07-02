@@ -13,7 +13,7 @@ const  Banner = () => {
     <div className='flex flex-col justify-center items-center py-4 bg-primary/70'>
         <h1>Trusted by 5K+ Businesses</h1>
         <div className='flex flex-wrap  w-full sm:w-3/4 md:w-full gap-8 justify-center mt-4'>
-            {images.map((img) =>  <img src={img} alt="" className='h-12 w-12 sm:mx-6'/>)}
+            {images.map((img,index) =>  <img key={index} src={img} alt="" className='h-12 w-12 sm:mx-6'/>)}
   
         </div>
     </div>

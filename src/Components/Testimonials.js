@@ -1,17 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import person1 from "../images/person1.jpeg";
 import person2 from "../images/person2.jpeg";
 import person3 from "../images/person3.jpeg";
 import person4 from "../images/person4.jpeg";
 import person5 from "../images/person5.jpeg";
 
-import { ArrowBack, ArrowForward } from "@mui/icons-material";
 
 import banner from "../images/banner.jpeg";
 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+
 const Card = ({ img, name, position, message }) => {
   return (
-    <div className="bg-white shadow-lg flex flex-col justify-center items-center p-8 min-w-full md:min-w-[46%] lg:min-w-[48%]  rounded-xl gap-4 slide">
+    <div className="bg-white shadow-lg flex flex-col justify-center items-center p-8  rounded-xl gap-4 slide mx-4">
       <div className="flex gap-4  w-full">
         <img src={img} className="h-20 w-20 rounded-lg" alt="" />
         <div className="flex flex-col">
@@ -66,23 +70,41 @@ export const Testimonials = () => {
     },
   ];
 
-  const [index,setSlideIndex] = useState(0);
+  var settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
 
 
-  const handleClick = (dir) => {
-     const elem = document.querySelectorAll('.slide')[index];
-     const elem2 = document.querySelectorAll('.slide')[(index+1)%5];
-
-    if(dir === 'r'){
-        elem.style.transform = `translateX(${-106*((index+1)%5)}%)`;
-        elem2.style.transform = `translateX(${-106*((index+1)%5)}%)`;
-    }
-    else {
-        elem.style.transform = `translateX(${106*((index)%5)}%)`;
-        elem2.style.transform = `translateX(${106*((index-1)%5)}%)`;
-    }
-    setSlideIndex((index+1)%5);
-  }
 
   return (
     <div className="flex flex-col  relative">
@@ -94,19 +116,16 @@ export const Testimonials = () => {
           Recruiters Recommend RecruitHub
         </h1>
 
-        <div className="flex items-center gap-4">
-          <span className="bg-gray-300 h-fit p-3 rounded-full z-40" onClick={() => handleClick('l')}>
-            <ArrowBack />
-          </span>
-          <div className="flex gap-8 w-full overflow-hidden items-center relative slider">
-            {data.map((item) => (
+        <div className="px-4">
+        <Slider {...settings}>
+        {data.map((item) => (
               <Card key={item.name} {...item} />
             ))}
-          </div>
-          <span className="bg-gray-300 h-fit p-3 rounded-full z-40" onClick = {() => handleClick('r')}>
-            <ArrowForward />
-          </span>
-        </div>
+        </Slider>
+      </div>
+
+
+
       </div>
 
       <img

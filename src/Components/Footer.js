@@ -33,14 +33,15 @@ export const Footer = () => {
             <h1 className='text-primary font-bold  py-2' style={{borderBottom:"1px solid rgb(113 201 206 "}}>Enquiry Now</h1>
             <p className='font-bold ' >I am looking for</p>
             <div className='flex flex-col px-2'>
+
             <div className='flex gap-4'>
             <input type="radio" name="" id="first"/>
             <label htmlFor="first"> Recruitments Solutions</label>
             </div>
 
             <div className='flex gap-4'>
-            <input type="radio" name="" id="second" /> Job Oppurtunities
-            <label htmlFor="second"> Recruitments Solutions</label>
+            <input type="radio" name="" id="second" />
+            <label htmlFor="second"> Job Oppurtunities</label>
             </div>
 
             </div>

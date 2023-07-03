@@ -4,11 +4,11 @@
 
 For this Assignment I have used React and Tailwind CSS for making this assignments. <br/>
 
-Some Features of this page: <br/>
-1) Main Section which contains Introduction to RecruitHub  <br/>
-2)Benefits of using RecruitHub <br/>
-3)Testimonial of our users.<br/>
-5)Fully responsive website.
+Some Features of this page:
+1) Main Section which contains Introduction to RecruitHub
+2) Benefits of using RecruitHub
+3) Testimonial of our users
+4) Fully responsive website.
 
 ## Task2 : Design Authentication Page:
 
